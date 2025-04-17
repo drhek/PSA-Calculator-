@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSA Calculator - Dr. Hisham Alkhatib</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calculator-container">
+        <header class="header">
+            <h1>PSA Ratio & Density Calculator</h1>
+            <p class="consultant-name">Dr. Hisham Alkhatib, Consultant Radiologist</p>
+        </header>
+
+        <main class="main-content">
+            <p class="disclaimer">
+                <strong>Disclaimer:</strong> This tool is for educational purposes only and is NOT a substitute for professional medical advice, diagnosis, or treatment. Clinical decisions should be based on comprehensive evaluation, including patient history, physical examination, and other diagnostic tests, interpreted by a qualified healthcare professional. Thresholds presented are general guidelines and may vary.
+            </p>
+
+            <div class="input-section">
+                <h2>Enter Patient Data</h2>
+                <div class="input-group">
+                    <label for="total-psa">Total PSA (ng/mL):</label>
+                    <input type="number" id="total-psa" step="0.01" placeholder="e.g., 6.5">
+                </div>
+                <div class="input-group">
+                    <label for="free-psa">Free PSA (ng/mL):</label>
+                    <input type="number" id="free-psa" step="0.01" placeholder="e.g., 0.8">
+                </div>
+                <div class="input-group">
+                    <label for="prostate-volume">Prostate Volume (cc or mL):</label>
+                    <input type="number" id="prostate-volume" step="0.1" placeholder="e.g., 45.0">
+                </div>
+                <div class="button-group">
+                    <button id="calculate-btn">Calculate</button>
+                    <button id="clear-btn" class="clear">Clear</button>
+                </div>
+            </div>
+
+            <div class="results-section" id="results-section">
+                <h2>Results & Interpretation</h2>
+
+                <div class="result-item" id="ratio-result-item">
+                    <h3>PSA Ratio (% Free PSA)</h3>
+                    <p><strong>Value:</strong> <span id="psa-ratio-value">-</span> %</p>
+                    <p><strong>Interpretation:</strong> <span id="psa-ratio-interpretation">-</span></p>
+                     <p class="guideline">(General Guideline: Ratio > 25% suggests lower likelihood of aggressive cancer, Ratio ≤ 10-15% suggests higher likelihood. Intermediate values require clinical correlation.)</p>
+                </div>
+
+                <div class="result-item" id="density-result-item">
+                    <h3>PSA Density (PSAD)</h3>
+                    <p><strong>Value:</strong> <span id="psa-density-value">-</span> ng/mL/cc</p>
+                    <p><strong>Interpretation:</strong> <span id="psa-density-interpretation">-</span></p>
+                     <p class="guideline">(General Guideline: PSAD > 0.15 ng/mL/cc is often considered suspicious and may increase likelihood of clinically significant cancer.)</p>
+                </div>
+                 <div id="error-message" class="error-message"></div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>© Educational Tool by Dr. Hisham Alkhatib</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
